@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            border: red 2px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <img :src="src" :title="name" :class="{aa:css}">
+    <input type="button" value="点我1" @click="add">
+    <input type="button" value="点我2" @click="check">
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            name:'野兽与美女',
+            src:"https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1884047996,2704209208&fm=26&gp=0.jpg",
+            css: true,
+        },
+        methods:{
+            add(){
+                this.css = !this.css
+            },
+            check(){
+                this.src = "https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3744636829,2509136946&fm=26&gp=0.jpg"
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    十位：<input type="text" v-model="shi">
+    个位：<input type="text" v-model="ge">
+    结果：<b>{{result}}</b>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            shi:'',
+            ge:''
+        },
+        computed:{
+            result(){
+                return this.shi * 10 + +this.ge;
+            }
+        }
+    })
+</script>
+</body>
+</html>

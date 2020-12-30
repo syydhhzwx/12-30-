@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3 v-show='false'>{{msg}}</h3>
+    <h3 v-show="count>20">{{msg}}</h3>
+    <input type="button" @click="check" value="点我">
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            msg:'啦啦啦',
+            count:24,
+        },
+        methods:{
+            check(){
+                this.count --;
+            }
+        }
+    })
+</script>
+</body>
+</html>

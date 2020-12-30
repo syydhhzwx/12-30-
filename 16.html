@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p @click="clickMe">{{num}}</p>
+    <p>十位：{{shi}}</p>
+    <p>个位：{{ge}}</p>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            shi:'',
+            ge:'',
+            num:99
+        },
+        methods:{
+
+            clickMe(){
+                this.num --;
+            },
+
+        },
+        watch: {
+            num(){
+                this.shi = parseInt(this.num/10);
+                this.ge = this.num % 10;
+            }
+
+        },
+
+    })
+</script>
+</body>
+</html>

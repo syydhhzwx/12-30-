@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3>{{count}}</h3>
+    <p @click="click_me"></p>
+    <input type="button" value="修改" @click="change_count(10,'tom')">
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            count:40,
+        },
+        methods:{
+            change_count:function (number,name) {
+                this.count = number
+            },
+            click_me(){
+                console.log(event)
+            }
+        }
+    })
+</script>
+</body>
+</html>

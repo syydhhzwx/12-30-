@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(v,k,i) in user">{{k}}</li>
+    </ul>
+    <ul>
+        <li v-for="(v,i) in arr">{{i}},{{v}}</li>
+    </ul>
+    <ul>
+        <li v-for="(v,i) in user_list" :key="user.id">{{v.id}} {{i}} {{v.name}}</li>
+    </ul>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            user:{name:'花花',age:16,bir:'2012-12-30'},
+            arr:['内蒙古','吉林','天尚'],
+            user_list: [
+                {id:1,name:'华晨宇',age:30,grend:'男'},
+                {id:2,name:'林深',age:30,grend:'男'},
+                {id:3,name:'biller',age:30,grend:'女'},
+            ]
+        },
+    })
+</script>
+</body>
+</html>

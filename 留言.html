@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="value">
+    <input type="button" @click="get_v" value="发送留言">
+    <ul>
+        <li v-for="(v,i) in note">{{v}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:"  @click="del_one(i)">删除</a>
+        </li>
+    </ul>
+
+    <span v-if="note.length>0">留言总数：{{note.length}}</span>
+    <input  type="button" value="删除全部" @click="del_all" v-if="note.length>0">
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            value:'',
+            note:[],
+        },
+        methods:{
+
+            get_v(){
+                let v = this.value
+                if (v){
+                  this.note.unshift(v)
+                }
+                this.value = ''
+            },
+            del_one(i){
+                this.note.splice(i,1)
+            },
+            del_all(){
+                this.note.splice(0,this.note.length)
+            }
+        }
+    })
+</script>
+</body>
+</html>
